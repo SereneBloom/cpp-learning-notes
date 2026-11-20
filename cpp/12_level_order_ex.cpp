@@ -1,5 +1,6 @@
 // 第 12 课练习：二叉树的层序遍历
 // 建树、释放、队列的代码已经给好，你只写四个遍历/统计函数
+#include <algorithm>
 #include <iostream>
 using namespace std;
 
@@ -129,7 +130,28 @@ void levelOrderByLevel(TreeNode *t) {
 // 提示：和练习 2 一样逐层处理，每层把 cur 和当前最大值比较
 int treeWidth(TreeNode *t) {
     // TODO
-    return 0;
+    if(t == NULL){                 
+        return 0;                  // 原写法：return ma;  此处 ma 还没声明，编译报错
+    }
+    SqQueue Q;
+    initQueue(Q);
+    int ma = 1;
+    enQueue(Q, t);
+    while(!queueEmpty(Q)){
+        int cur = queueLength(Q);  
+        ma = max(ma, queueLength(Q));
+        for(int i = 0; i < cur; i ++){
+            TreeNode *x;
+            deQueue(Q, x);
+            if(x->left != NULL){
+                enQueue(Q, x->left);
+            }
+            if(x->right != NULL){
+                enQueue(Q, x->right);
+            }
+        }          
+    }
+    return ma;                     // 原写法：return 0;  把算好的 ma 扔了，宽度永远是 0
 }
 
 // 练习 4（进阶）：判断是否为完全二叉树
@@ -149,6 +171,26 @@ int treeWidth(TreeNode *t) {
 //       }
 bool isComplete(TreeNode *t) {
     // TODO
+    if(t == NULL){                     // 空树也算完全二叉树
+        return true;
+    }
+    SqQueue Q;
+    initQueue(Q);
+    enQueue(Q, t);
+    bool seenNull = false;             // 是否已经遇到过空孩子
+    while(!queueEmpty(Q)){
+        TreeNode *p;
+        deQueue(Q, p);
+        if(p == NULL){
+            seenNull = true;           // 遇到空孩子，说明后面不许再有真结点
+        }else{
+            if(seenNull){              // 空之后又冒出真结点，编号出现空档
+                return false;
+            }
+            enQueue(Q, p->left);       // 关键：空孩子也要入队，这里不判 NULL
+            enQueue(Q, p->right);
+        }
+    }
     return true;
 }
 
