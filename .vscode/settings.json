@@ -38,7 +38,13 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "cerrno": "cpp",
+    "climits": "cpp",
+    "ios": "cpp",
+    "queue": "cpp",
+    "random": "cpp",
+    "*.rh": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

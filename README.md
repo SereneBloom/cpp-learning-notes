@@ -41,11 +41,11 @@ g++ -std=c++11 -Wall -fexec-charset=GBK -o run.exe 08_seqlist_ex.cpp
 | 09 | 栈与队列 | `cpp/09_stack_queue.cpp` / `_ex.cpp` | 顺序栈、进制转换、括号匹配、循环队列、两栈实现队列 | ✅ |
 | 10 | 链表高频算法 | `cpp/10_linked_list_algo.cpp` / `_ex.cpp` | 倒数第 k 个、环入口、有序去重、链表相交 | ✅ |
 | 11 | 二叉树基础 | `cpp/11_binary_tree.cpp` / `_ex.cpp` | 二叉链表、先/中/后序遍历、结点数、叶子数、深度、交换子树 | ✅ |
-| 12 | 层序遍历 | `cpp/12_level_order.cpp` / `_ex.cpp` | BFS、按层输出、树的宽度、完全二叉树判定 | ✅ |
+| 12 | 层序遍历 | `cpp/12_level_order.cpp` / `_ex.cpp` | BFS、按层输出、树的宽度、完全二叉树判定 | 🚧 练习 1–2 完成，3–4 待做 |
 
 ## 后续计划
 
-| 内容 | 408 考点 |
+| 内容 | 409 考点 |
 |---|---|
 | 二叉排序树 BST | 插入、查找、删除（三种情况） |
 | 平衡二叉树 AVL 与堆 | 四种旋转、建堆与向下调整 |

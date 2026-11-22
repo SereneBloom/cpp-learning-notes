@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/桌面/408算法题/cpp",
-      "program": "d:/桌面/408算法题/cpp/build/Debug/outDebug",
+      "cwd": "d:/桌面/408算法题/cpp/text",
+      "program": "d:/桌面/408算法题/cpp/text/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
